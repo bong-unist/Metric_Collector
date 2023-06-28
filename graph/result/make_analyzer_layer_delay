@@ -1,0 +1,41 @@
+reset;
+set terminal gif font 'Arial' 14;
+set output 'analyzer_layer_delay.png';
+set title 'Network-delay' font 'Arial-Bold, 19';
+unset key;
+set autoscale;
+set key right top;
+set xlabel 'Time';
+set ylabel 'Latency (ms)';
+set ytics nomirror;
+#set xrange ["2023-01-18 0:0:0":]
+#set xrange [:10]
+#set yrange [0:10];
+set boxwidth 0.9;
+set datafile separator ","
+set xtics scale 1 nomirror;
+#set xtics rotate
+#set xdata time
+#set timefmt "%Y-%m-%d %H:%M:%S"
+#set format x "%Y-%m-%d %H:%M:%S"
+#set xrange ["2023-01-19 01:36:23":"2023-01-19 01:37:44"];
+set style line 1 lt 1 lw 0.5;
+set style fill solid border -1
+set style line 1 lt 1 pt 1 ps 1 lc rgb 'red' lw 1
+set style line 2 lt 1 pt 2 ps 1 lc rgb 'web-green' lw 1
+set style line 3 lt 1 pt 3 ps 1 lc rgb 'web-blue' lw 1
+set style line 4 lt 1 pt 4 ps 1 lc rgb 'dark-cyan' lw 1
+set style line 5 lt 1 pt 1 ps 1 lc rgb 'orange' lw 1
+set style line 6 lt 1 pt 2 ps 1 lc rgb 'yellow' lw 1
+set style line 7 lt 1 pt 3 ps 1 lc rgb 'violet' lw 1
+set style line 8 lt 1 pt 4 ps 1 lc rgb 'black' lw 1
+plot '3_sock_tcp' using 1:2 ls 1 with lines title "node1\\\_vm\\\_sock\\\_tcp", \
+	     '3_tcp_ip' using 1:2 ls 2 with lines title "node1\\\_vm\\\_tcp\\\_ip", \
+		 '3_ip_driver' using 1:2 ls 3 with lines title "node1\\\_vm\\\_ip\\\_driver", \
+		 '3_driver_virtio' using 1:2 ls 4 with lines title "node1\\\_vm\\\_driver\\\_virtio", \
+		 '3_ip_virtio' using 1:2 ls 4 with lines title "node1\\\_vm\\\_ip\\\_virtio", \
+		 '4_sock_tcp' using 1:2 ls 5 with lines title "node2\\\_vm\\\_sock\\\_tcp", \
+		 '4_tcp_ip' using 1:2 ls 6 with lines title "node2\\\_vm\\\_tcp\\\_ip", \
+		 '4_ip_driver' using 1:2 ls 7 with lines title "node2\\\_vm\\\_ip\\\_driver", \
+		 '4_driver_virtio' using 1:2 ls 8 with lines title "node2\\\_vm\\\_driver\\\_virtio", \
+		 '4_ip_virtio' using 1:2 ls 8 with lines title "node2\\\_vm\\\_ip\\\_virtio", \

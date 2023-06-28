@@ -1,0 +1,9 @@
+#address: 10.1.1.200
+address: 10.20.24.117
+port: 51111
+username: bw
+password: qhd7812
+hostname: bw
+eth: 
+    - enp89s0
+    - lo

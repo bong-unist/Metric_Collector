@@ -1,0 +1,14 @@
+host_func:
+	- virtio_dev_tx_split
+	- virtio_dev_tx_packed
+	- virtio_dev_rx_split
+	- virtio_dev_rx_packed
+	- mlx_rx_burst_vec
+	- mlx5_tx_burst_none_empw
+vm_func:
+	- sock_sendmsg
+	- sock_recvmsg
+	- tcp_transmit_skb
+	- tcp_v4_rcv
+	- ip_finish_output2
+	- ip_rcv

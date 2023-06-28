@@ -1,0 +1,27 @@
+reset;
+set terminal gif font 'Arial' 12;
+set output 'analyzer_local_delay.png';
+set title 'Network-delay' font 'Arial-Bold, 19';
+unset key;
+set key right top;
+set xlabel 'Time';
+set ylabel 'Network Delay (ms)';
+set ytics nomirror;
+#set xrange [:50];
+#set yrange [0:];
+set autoscale;
+set boxwidth 0.9;
+set xtics scale 1 nomirror;
+set datafile separator ",";
+#set xtics rotate
+#set xdata time
+#set timefmt "%Y-%m-%d %H:%M:%S"
+#set format x "%Y-%m-%d %H:%M:%S"
+#set xrange ["2023-01-19 01:36:23":"2023-01-19 01:37:44"];
+set style line 1 lt 1 lw 0.5;
+set style fill solid border -1
+set style line 1 lt 1 pt 1 ps 1 lc rgb 'red' lw 2
+set style line 2 lt 1 pt 2 ps 1 lc rgb 'green' lw 2
+set style line 3 lt 1 pt 3 ps 1 lc rgb 'blue' lw 2
+set style line 4 lt 1 pt 4 ps 1 lc rgb 'orange' lw 2
+plot '1_1' using 1:2 ls 1 with lines title "node1", '2_2' using 1:2 ls 2 with lines title "node2", '3_3' using 1:2 ls 3 with lines title "node1\\\_vm", '4_4' using 1:2 ls 4 with lines title "node2\\\_vm"

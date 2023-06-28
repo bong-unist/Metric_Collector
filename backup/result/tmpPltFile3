@@ -1,0 +1,38 @@
+reset;
+set terminal gif font 'Arial' 12;
+set output 'stat_metric.png';
+set title 'Network-delay' font 'Arial-Bold, 19';
+unset key;
+set key right top;
+set xlabel 'Time';
+set ylabel 'Server stat (%)';
+set ytics nomirror;
+#set xrange [0:9]
+#set yrange [0:];
+set boxwidth 0.9;
+set datafile separator ","
+set xtics scale 1 nomirror;
+#set xtics rotate 45
+#set xdata time
+#set timefmt "%Y-%m-%d %H:%M:%S"
+#set format x "%Y-%m-%d %H:%M:%S"
+set style line 1 lt 1 lw 0.5;
+set style fill solid border -1
+set style line 1 lt 1 pt 1 ps 1 lc rgb 'red' lw 1
+set style line 2 lt 1 pt 2 ps 1 lc rgb 'green' lw 1
+set style line 3 lt 1 pt 3 ps 1 lc rgb 'blue' lw 1
+set style line 4 lt 1 pt 4 ps 1 lc rgb 'orange' lw 1
+plot '3_ntpd_metric_cpu' using 1:2 title "node1\\\_vm\\\_cpu\\\_ntpd", \
+		 '3_ntpd_metric_mem' using 1:2 title "node1\\\_vm\\\_mem\\\_ntpd", \
+		 '3_python3_metric_cpu' using 1:2 title "node1\\\_vm\\\_cpu\\\_python3", \
+		 '3_python3_metric_mem' using 1:2 title "node1\\\_vm\\\_mem\\\_python3", \
+		 '3_sshd_metric_cpu' using 1:2 title "node1\\\_vm\\\_cpu\\\_sshd", \
+         '3_sshd_metric_mem' using 1:2 title "node1\\\_vm\\\_mem\\\_sshd", \
+		 '4_python3_metric_cpu' using 1:2 title "node2\\\_vm\\\_cpu\\\_python3", \
+         '4_python3_metric_mem' using 1:2 title "node2\\\_vm\\\_mem\\\_python3", \
+		 '4_sshd_metric_cpu' using 1:2 title "node2\\\_vm\\\_cpu\\\_sshd", \
+		 '4_sshd_metric_mem' using 1:2 title "node2\\\_vm\\\_mem\\\_sshd", \
+		 '3_iperf_metric_cpu' using 1:2 title "node1\\\_vm\\\_cpu\\\_iperf", \
+		 '3_iperf_metric_mem' using 1:2 title "node1\\\_vm\\\_mem\\\_iperf", \
+		 '4_iperf_metric_cpu' using 1:2 title "node2\\\_vm\\\_cpu\\\_iperf", \
+		 '4_iperf_metric_mem' using 1:2 title "node2\\\_vm\\\_mem\\\_iperf"

@@ -1,0 +1,26 @@
+management_server: 10.20.24.117
+servers: 
+    - address: 10.20.24.35
+      port: 51111
+      eth: 
+          - enp1s0
+          - eno1
+          - lo
+    - address: 10.20.17.243
+      port: 51111
+      eth:
+         - enp1s0
+         - eno1
+         - lo
+#    - address: 10.1.1.26
+#      port: 22
+#      eth:
+#        - enp89s0
+#        - ens3
+#        - lo
+#    - address: 10.1.1.27
+#      port: 22
+#      eth:
+#        - enp89s0
+#        - ens3
+#        - lo

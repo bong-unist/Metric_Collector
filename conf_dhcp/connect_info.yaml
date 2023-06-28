@@ -1,0 +1,51 @@
+servers:
+    - address: 10.20.24.35
+      port: 51111
+      username: sonic
+      password: skwx4216@!
+      hostname: node1
+      novm: 1
+      metadata_key: 1
+      eth:
+          - enp1s0
+          - lo
+      other_address:
+          - 192.168.50.244
+          - 192.168.42.62
+          - 10.20.17.154
+    - address: 10.20.17.243
+      port: 51111
+      username: sonic
+      password: skwx4216@!
+      hostname: node2
+      novm: 2
+      metadata_key: 2
+      eth:
+          - enp1s0
+          - lo
+      other_address:
+          - 192.168.42.55
+#    - address: 10.1.1.26
+#      port: 22
+#      username: sonic
+#      password: root
+#      hostname: node1_vm
+#      isvm: 1
+#      metadata_key: 3
+#      eth:
+#          - ens3
+#          - lo
+#    - address: 10.1.1.27
+#      port: 22
+#      username: sonic
+#      password: root
+#      hostname: node2_vm
+#      isvm: 2
+#      metadata_key: 4
+#      eth:
+#          - ens3
+#          - lo
+#    - address: 10.1.1.36
+#      iscontainer: 1
+#    - address: 10.1.1.46
+#      iscontainer: 2
