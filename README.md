@@ -140,10 +140,9 @@
 		| port | redis's port | 5000 |
 
 ## Execution
-First, Install MySQL, Redis
-Second, Setting Configuration files properly which is mentioned above
-Third, Exchange SSH keys between Manager and Proved Server
-
+* First, Install MySQL, Redis
+* Second, Setting Configuration files properly which is mentioned above
+* Third, Exchange SSH keys between Manager and Proved Server
 <pre><code>
 sudo python3 ebpf_main.py
 </code></pre>
